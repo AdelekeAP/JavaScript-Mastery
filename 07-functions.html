@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Functions</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <script>
+    /*
+    function function1() {
+      console.log('hello');
+      console.log(2+2);
+    }
+
+    function1();
+    */
+
+    /* as return gets value out of a function , parameters puts a value into a function , parameters work like variables, parameter only exists within the function scope */
+    function calculateTax(cost, taxPercent = 0.1){ //0.1 here is a defualt value to avoid undefined problem
+      //if  parameter was a number then we would say function takes a number 
+      console.log() //if you do not save a value for a parameter , the value returned is undefined
+      console.log(cost * taxPercent);
+
+    }
+
+
+    calculateTax(200, 0.2);
+    calculateTax(5000); //5000 here can be seen as passing a value to the function and is also known as the arguement
+   
+  </script>
+</body>
+
+</html>

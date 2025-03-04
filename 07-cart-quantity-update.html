@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart quantity</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+
+  <button onclick="
+      console.log(`Cart quantity: ${cartQuanity}`);
+    ">
+    Show Quantity
+  </button>
+  <button onclick="
+   updateCartQuantity(1);
+    
+  ">
+    Add to Cart
+  </button>
+
+
+  <button onclick="
+   updateCartQuantity(2);
+   
+  ">+2</button>
+  
+  <button onclick="
+  
+  updateCartQuantity(3);
+  ">+3</button>
+
+  <button onclick="
+    updateCartQuantity(4);
+
+  " 
+  >+4</button>
+
+  <button onclick="
+    updateCartQuantity(5);
+  "
+  >+5</button>
+
+  <button
+  onclick="
+    updateCartQuantity(-1);  
+  " 
+  >Remove from Cart</button>
+
+  <button onclick="
+    updateCartQuantity(-2);
+ " 
+  >-2</button>
+
+
+  <button 
+  onclick="
+    updateCartQuantity(-3);
+  "
+  >-3</button>
+
+  <button onclick="
+    cartQuanity = 0;
+    console.log('Cart was reset');
+    console.log(`Cart quantity: ${cartQuanity}`) 
+  "
+  >Reset Cart</button>
+
+
+  <script>
+    /*code before early return 
+    if(cartQuanity + value > 10){
+        alert('Cart is full');
+      }else if(cartQuanity + value < 0){
+        alert('Not enough items in Cart!');
+      }else {
+        cartQuanity += value;
+        console.log(`Cart quantity: ${cartQuanity}`);
+      }*/
+     
+      
+    let cartQuanity = 0;
+    function updateCartQuantity(value){
+      if(cartQuanity + value > 10){
+        alert('Cart is full');
+        return; //early return makes our code cleaner becasue we can remove 'else-if'/'else'
+      }
+      
+      if(cartQuanity + value < 0){
+        alert('Not enough items in Cart!');
+        return;
+      }
+
+      cartQuanity += value;
+      console.log(`Cart quantity: ${cartQuanity}`);
+      
+    }
+
+
+
+  </script>
+</body>
+
+</html>

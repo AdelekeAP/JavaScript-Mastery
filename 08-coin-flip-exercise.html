@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock paper scissors</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+
+  <p>
+    <button onclick="
+      playGame('heads')
+       
+      ">heads</button>
+    <button onclick="
+      
+      playGame('tails') 
+    
+    ">tails</button>
+  </p>
+ 
+  <script>
+
+    const score = JSON.parse(localStorage.getItem('score')) || {
+      wins: 0,
+      losses: 0
+    }
+    
+
+    function playGame(guess){
+      const var1 = Math.random();
+      const result = var1 < 0.5 ? 'heads' : 'tails';
+     
+      console.log(guess === result ? 'you win' : 'you lose');
+
+      if (guess === result ){
+        score.wins++;
+      }else {
+        score.losses++;
+      }
+
+      localStorage.setItem('score', JSON.stringify(score));
+      console.log(score);
+      
+      
+    }
+
+
+  </script>
+</body>
+
+</html>

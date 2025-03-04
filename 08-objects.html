@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Objects</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <script>
+    /*
+     object lets us group multiple values together and use multiple values together ( they could be related), here name is a property and socks is value
+    const product = {
+      name: 'socks', //property-value pair
+      price: 1090
+    };
+
+    console.log(product);
+    console.log(product.name); //to access the product, accessing a value that does not exist returns undefined
+    console.log(product.price);
+    
+     to change the value of property and then to add a property to object and to delete property from object
+    product.name = 'cotton socks';
+    console.log(product);
+
+
+    product.newProperty = true;
+    console.log(product);
+
+
+    delete product.newProperty;
+    console.log(product);
+    
+
+
+     between bracket notation you do not have to use a string but you can use a variable or calculation
+    const product2 = {
+      name : 'Shirt',
+      'delivery-time': '1 day' ,//if you have only a string between the brackets here hte brackets are optiona;
+      rating: {
+        starts: 4.5,
+        count: 87
+      },//function in an object as functions are another types of value in javascript and as we know we store js values in objects
+      fun : function function1(){
+        console.log('function inside objcts') //function inside object is known as a method
+      }
+    };
+
+    console.log(product2);
+    console.log(product2.name);
+    console.log(product2['name']); //we use bracket notation to access properties in object when the properties we are trying to access does not work with dot notation
+    console.log(product2.delivery-time) //returns error as - between delivery time is seen as minus sign in JS so we now use bracket notation
+    console.log(product2['delivery-time']);
+    console.log(product2.rating.count);
+    product2.fun();
+
+
+
+    JSON is a js object with less features i.e oit does not support functions and properties and values should be in double quotes,
+     JSON syntax is more universal i.e we send json to send data between computers that might use different programming langaugges as json syntax unlike javascript object only understoood in js
+    can be understood by every programming languages  
+    built in jSON object allows us convert JS object to json JSON.stringify
+    JSON TO JS OBJECT 
+    JSON.parse()
+    json.stringify returns a string while json.parse returns an object  
+
+    console.log(JSON.stringify(product2)); //stringify is a method of JSON object i.e is a function insdie the JSON object, stringify also results in a string
+    
+    const jsonString = JSON.stringify(product2) 
+    console.log(JSON.parse(jsonString));
+
+    
+    null means you intentionally want something to be empty e.g 
+    function func(par1 = 'default'){
+      console.log(par1);
+    }
+
+    func(); returns default and func(undefined) returns string default
+
+    func(null); returns null
+    
+    
+    local storage does not get deleted when you refresh a page 
+    */
+
+
+    console.log('hello'.length); // string method tells us how long string is
+    console.log('hello'.toUpperCase()); //string method gices us copy of string in uppercase
+
+    /* strings can have methos without being pbjects because javascript wraps these objects in a special object first and this object has methods length and to uppercase , this feature is called autoboxing because JS string in object like a box , it works with values like numbers and booleans but does not work with null and undefined*/
+
+
+    /* message:'hello' is not stored a value stored in object1 , when we create this object the value is saved somewhere in the computers memeory and this object1 variable just has a reference that points to location in the computers memory , and this makes language more efficient */
+    const object1 = {
+      message: 'hello'
+
+    };
+
+    const object2 = object1; //we are not actually copying the object into variable ,we are copying the refernce so they both point to same object in memory, so if obj1 is changed obj2 will also be changed
+    console.log(object1);
+    console.log(object2);
+
+
+    object1.message = 'good job!';
+    console.log(object1);  //object1 can be change messge property even though we  created with const because variable contains reference that points to the object , const prevents us from changing the reference in variable but does not prevent us from reaching into the reference and changing the object that it is pointing to, so we can still change value in obj even if we use const 
+
+    const object3 = {
+      message: 'good job!'
+
+    };
+
+    console.log(object1===object3); //returns false as you cannot compare values in objects you compare the references amd these objects have the different references in the object memory , to compare you do that manually by checking the message property in each objects
+    console.log(object2 === object1) //returns true because they have same object reference
+
+
+
+    const object4 = {
+      message: 'good job!',
+      price: 799
+    };
+
+    const message = object4.message;// code below does samme as this
+    const { message, price  } = object4; //takes message property out of object4 and save it in a variable called message;
+    console.log(message);
+    console.log(price);
+    //if variable name and property name are the same there is a shortcut known as destructing as seen above, it is an easier way to take properties out of an object
+
+    //this code is to assign value in message variable to message propety in the object5 so console logging object returns message propertyy and whatever valie is in the object5
+    //shorthand shorcut for this if variable name and property have the same name is to just write message
+    const object5 = {
+      // message: message 
+      message,
+      // method: function function1(){
+      //   console.log('method');
+      // }
+
+      //this code below does the same as the one above to create the function, it is a shorthand method
+      method (){
+        console.log('method');
+      }
+    };
+    
+    console.log(object5);
+
+    object5.method();
+
+
+  </script>
+</body> 
+
+</html>
