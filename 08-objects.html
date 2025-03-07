@@ -8,8 +8,8 @@
 </head>
 <body>
   <script>
-    /*
-     object lets us group multiple values together and use multiple values together ( they could be related), here name is a property and socks is value
+    
+    //  object lets us group multiple values together and use multiple values together ( they could be related), here name is a property and socks is value
     const product = {
       name: 'socks', //property-value pair
       price: 1090
@@ -19,7 +19,7 @@
     console.log(product.name); //to access the product, accessing a value that does not exist returns undefined
     console.log(product.price);
     
-     to change the value of property and then to add a property to object and to delete property from object
+    //  to change the value of property and then to add a property to object and to delete property from object
     product.name = 'cotton socks';
     console.log(product);
 
@@ -33,10 +33,10 @@
     
 
 
-     between bracket notation you do not have to use a string but you can use a variable or calculation
+     /*between bracket notation you do not have to use a string but you can use a variable or calculation
     const product2 = {
       name : 'Shirt',
-      'delivery-time': '1 day' ,//if you have only a string between the brackets here hte brackets are optiona;
+      'delivery-time': '1 day' ,//if you have only a string between the brackets here the brackets are optional;
       rating: {
         starts: 4.5,
         count: 87
@@ -56,7 +56,7 @@
 
 
 
-    JSON is a js object with less features i.e oit does not support functions and properties and values should be in double quotes,
+    JSON is a js object with less features i.e it does not support functions, and  properties and values should be in double quotes,
      JSON syntax is more universal i.e we send json to send data between computers that might use different programming langaugges as json syntax unlike javascript object only understoood in js
     can be understood by every programming languages  
     built in jSON object allows us convert JS object to json JSON.stringify
@@ -78,20 +78,21 @@
     func(); returns default and func(undefined) returns string default
 
     func(null); returns null
+    func(undefined); returns default
     
     
     local storage does not get deleted when you refresh a page 
-    */
+    
 
 
     console.log('hello'.length); // string method tells us how long string is
-    console.log('hello'.toUpperCase()); //string method gices us copy of string in uppercase
+    console.log('hello'.toUpperCase()); //string method gices us copy of string in uppercase*/
 
-    /* strings can have methos without being pbjects because javascript wraps these objects in a special object first and this object has methods length and to uppercase , this feature is called autoboxing because JS string in object like a box , it works with values like numbers and booleans but does not work with null and undefined*/
+    /* strings can have properties and methods without being objects because javascript wraps these strings in a special object first and this object has mproperty length and method to uppercase , this feature is called autoboxing because JS string in object like a box , it works with values like numbers and booleans but does not work with null and undefined*/
 
 
-    /* message:'hello' is not stored a value stored in object1 , when we create this object the value is saved somewhere in the computers memeory and this object1 variable just has a reference that points to location in the computers memory , and this makes language more efficient */
-    const object1 = {
+    /* message:'hello' is not stored a value stored in object1 , when we create this object the value is saved somewhere in the computers memeory, and this object1 variable just has a reference that points to location in the computers memory , and this makes language more efficient */
+    const object1 = { //object1 has the reference to the value , and reference is what points to somewhere in memory 
       message: 'hello'
 
     };
@@ -102,7 +103,7 @@
 
 
     object1.message = 'good job!';
-    console.log(object1);  //object1 can be change messge property even though we  created with const because variable contains reference that points to the object , const prevents us from changing the reference in variable but does not prevent us from reaching into the reference and changing the object that it is pointing to, so we can still change value in obj even if we use const 
+    console.log(object1);  //object1 can be change messge property even though we  created with const because variable(object1) contains reference that points to the object , const prevents us from changing the reference in variable but does not prevent us from reaching into the reference and changing the object that it is pointing to, so we can still change value in obj even if we use const 
 
     const object3 = {
       message: 'good job!'
@@ -118,18 +119,21 @@
       message: 'good job!',
       price: 799
     };
-
+    DESTRUCTURING
     const message = object4.message;// code below does samme as this
     const { message, price  } = object4; //takes message property out of object4 and save it in a variable called message;
     console.log(message);
     console.log(price);
     //if variable name and property name are the same there is a shortcut known as destructing as seen above, it is an easier way to take properties out of an object
 
-    //this code is to assign value in message variable to message propety in the object5 so console logging object returns message propertyy and whatever valie is in the object5
-    //shorthand shorcut for this if variable name and property have the same name is to just write message
+    //this code is to assign value in message variable to message propety in the object5 so console logging object returns message propertyy and whatever valUe is in the object5
+   
     const object5 = {
-      // message: message 
-      message,
+      // message: message  //shorcut for this if variable name and property have the same name is to just write message
+      message, //shorthand property
+      
+      
+      SHORTHAND METHOD
       // method: function function1(){
       //   console.log('method');
       // }

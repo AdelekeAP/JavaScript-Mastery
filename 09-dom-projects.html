@@ -25,18 +25,13 @@
 
   <button onclick="
     calculateTotal()
-
-
-  
-  
-  
   ">Calculate</button>
 
   <p class="js-total-cost"></p>
 
   <script>
 
-    Stirng(25)
+    String(25);
     console.log('25' - 5); //when strings only contain a number and we -*/  JS will automatically convert string to a number i.e this is known as type coercion NOTE + is different as it adds 5 to string so 255
     console.log('25' + 5)
 
@@ -55,7 +50,7 @@
 
     function calculateTotal(){
       const inputElement = document.querySelector('.js-cost-input');
-      let cost = Number(inputElement.value); //whenever we get a avlue from the DOM the value will be a string so we if we want to do math with value we have to convert the type to number
+      let cost = Number(inputElement.value); //whenever we get a value from the DOM the value will be a string so we if we want to do math with value we have to convert the type to number
       if(cost < 40){ 
         cost += 10;
       }

@@ -113,15 +113,13 @@
       updateScoreElement();
 
       document.querySelector('.js-result').innerHTML = result;
-      document.querySelector('.js-moves').innerHTML = ` You ${playerMove} - ${computerMove}`;
+      document.querySelector('.js-moves').innerHTML = ` You ${playerMove} - Computer ${computerMove}`;
     }
 
     function updateScoreElement(){
       document.querySelector('.js-score')
         .innerHTML = `Wins : ${score.wins}, Losses:
         ${score.losses}, Ties:${score.ties}`;
-
-
     }
     
 
