@@ -29,6 +29,7 @@
 
     myArray.splice(0, 1); //first value is index , 2nd value is number of values we want to remove 
     console.log(myArray)
+    splice returns emoty array if .splice(0,0) and you console.log sliced array
     */
 
     /*
@@ -105,7 +106,7 @@
    console.log(array2);
    //array 1 and 2 would bpoth be changed as they are references to the same point in the computers memory 
    //we can use .slice() method to avoid this
-   const array3 = array1.splice();
+   const array3 = array1.slice();
    array3.push(4);
    console.log(array1);
    console.log(array3);
